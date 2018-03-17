@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JS Basics</title>
+	<style>
+		.todo{
+			float: left;
+			cursor: pointer;
+			color: red
+		}
+		.done{
+			float: left;
+			margin-left: 100px;
+			color: green;
+		}
+	</style>
+	
+	<script src="ejercicio7.js"></script>
+</head>
+
+<body>
+	<ol class="todo" id="todo">
+		<h3>To Do:</h3>
+	</ol>
+	<ol class="done" id="done">
+		<h3>Done:</h3>
+	</ol>
+	
+	<script>
+		var hacer = document.getElementById('todo');
+		var hecho = document.getElementById('done');
+		for (var i = 0; i < asdf.length; i++) {
+			var etiqueta = document.createElement('li');
+			etiqueta.setAttribute("onclick", "completeTask(" + asdf[i].id + ")");
+			etiqueta.setAttribute("id", asdf[i].id);
+			
+			var texto = document.createTextNode(asdf[i].title);
+			etiqueta.appendChild(texto);
+			if (!asdf[i].completed) {
+				hacer.appendChild(etiqueta);
+			} else {
+				hecho.appendChild(etiqueta);
+			};
+		};
+		
+		function completeTask(id) {
+			for (var i = 0; i < asdf.length; i++) {
+				if (asdf[i].id == id) {
+					asdf[i].completed = true;
+					var todo = document.getElementById(asdf[i].id);
+					hacer.removeChild(todo);
+					hecho.appendChild(todo);
+				};
+			};
+		};
+		
+	</script>
+</body>
+</html>

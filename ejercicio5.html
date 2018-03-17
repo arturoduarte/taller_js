@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<input type="text" name="calculator" id="entrada" value="">
+	<br>
+	<button class="btn" type="button" name="button" onclick="add('1')">1</button>
+	<button class="btn" type="button" name="button" onclick="add('2')">2</button>
+	<button class="btn" type="button" name="button" onclick="add('3')">3</button>
+	<button class="btn" type="button" name="button" onclick="add('4')">4</button>
+	<button class="btn" type="button" name="button" onclick="add('5')">5</button>
+	<button class="btn" type="button" name="button" onclick="add('6')">6</button>
+	<br>
+	<button class="btn" type="button" name="button" onclick="add('+')">+ </button>
+	<button class="btn" type="button" name="button" onclick="add('-')">- </button>
+	<button class="btn" type="button" name="button" onclick="add('/')">/ </button>
+	<button class="btn" type="button" name="button" onclick="add('*')">* </button>
+	<br>
+	<button class="result" type="button" name="result" onclick="calcTotal()">=</button>
+	
+	<button class="btn" type="button" name="button" onclick="document.getElementById('entrada').value = ''">CLEAR</button>
+	
+	<script type="text/javascript">
+		var result = document.getElementsByName("result")[0];
+		var calculator = document.getElementsByName("calculator")[0];
+		var calcTotal = function(){
+			calculator.value = eval(calculator.value);
+		}
+		
+		function add(caracter){
+			inicial =	document.getElementById("entrada").value
+			document.getElementById("entrada").value = inicial + caracter
+		}
+		
+		function clear(){
+			console.log('ss')
+			document.getElementById('entrada').value = ''
+		}
+		
+	</script>
+</body>
+</html>
